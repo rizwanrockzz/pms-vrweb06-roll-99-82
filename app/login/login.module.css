@@ -1,7 +1,7 @@
 .main_hero{
     display: flex;
-    margin: 2rem 7rem;
-    padding: 1rem;
+    /* margin: 2rem 7rem; */
+    /* padding: 1rem; */
     border-radius: 20px;
     background-color: var(--light-black);
     color: var(--light-white);
@@ -13,6 +13,7 @@
     align-items: center;
     height: 100vh;
     background-color: var(--light-white);
+    background: #1a1d23;
 }
 .main_left{
     background-color: var(--light-black);

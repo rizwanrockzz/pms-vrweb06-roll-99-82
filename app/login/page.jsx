@@ -86,7 +86,8 @@ function CoordinatorOrStudentLogin() {
                     <div className={styles.main_left}>
                         <div className={styles.text}>
 
-                            <p className={styles.txt}>The key to happiness is to log in.</p>
+                            {/* <p className={styles.txt}>The key to happiness is to log in.</p> */}
+                            <h1 className={styles.txt}>Student / Coordinators Login</h1>
                             <form onSubmit={handleCoordinatorOrStudentLogin}>
                                 <div className={styles.main_form}>
                                     <div className={styles.input_field}>
@@ -102,7 +103,7 @@ function CoordinatorOrStudentLogin() {
                                         <input type='password' placeholder='Password' className={styles.input_entry} name='password' required />
                                     </div>
                                     <Link href="#" className={styles.input_forget}>
-                                        Forget Password
+                                        Forgot Password
                                     </Link>
                                     <div>
                                         <button type='submit' className={styles.btn}>Login</button>
