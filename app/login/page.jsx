@@ -69,6 +69,18 @@ function CoordinatorOrStudentLogin() {
     }
     return (
         <>
+            <ToastContainer
+                position="top-center"
+                autoClose={4000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <div className={styles.main}>
                 <div className={styles.main_hero}>
                     <div className={styles.main_left}>

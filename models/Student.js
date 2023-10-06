@@ -1,6 +1,33 @@
 import mongoose from 'mongoose';
 const { Schema, model } = mongoose;
 
+const crackedCompaniesDetailsSchema = new Schema({
+    companyname: {
+        type: String,
+        default: ""
+    },
+    roleOffered: {
+        type: String,
+        default: ""
+    },
+    offerLetter: {
+        type: String,
+        default: ""
+    },
+    package: {
+        type: Number,
+        default: 0
+    },
+    offerAccepted: {
+        type: Boolean,
+        default: false
+    },
+    offerRecievedDate: {
+        type: String,
+        default: ""
+    }
+})
+
 const studentSchema = new Schema({
     studentid: {
         type: String,
@@ -58,12 +85,22 @@ const studentSchema = new Schema({
         type: String,
         default: ""
     },
-    // offerletter ,cracked companies
+    newlogin: {
+        type: Boolean,
+        default: true
+    },
+    passedOutYear: {
+        type: String,
+        default: ""
+    },
+    crackedCompanies: [crackedCompaniesDetailsSchema]
 }, {
     timestamps: true
 });
 
 
 export default mongoose.models.Student || model('Student', studentSchema);
+
+export const CrackedCompaniesDetails = mongoose.models.crackedCompaniesDetails || model('crackedCompaniesDetails', crackedCompaniesDetailsSchema);
 
 

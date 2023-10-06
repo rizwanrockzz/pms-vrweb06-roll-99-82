@@ -1,0 +1,276 @@
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+  margin: 0 0 40px 0;
+}
+
+.imageSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bigPicture {
+  height: 100vh;
+  width: 80vh;
+}
+
+.formSection {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 170px;
+  padding: 0px 40px;
+}
+
+.css123 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.formSection form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0px 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.formSection form .field {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.formSection form .field input {
+  padding: 12px;
+  outline: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  border: 1px solid #333;
+}
+
+.emailField {
+  position: relative;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.emailField input {
+  position: relative;
+  padding: 12px 12px 12px 50px;
+  outline: none;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  border: 1px solid #333;
+}
+
+.formSection label {
+  font-weight: 600;
+  display: flex;
+  font-size: 1.1rem;
+  align-items: center;
+  color: #363a3d;
+}
+
+.genderOptions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.field {
+  margin-bottom: 15px;
+}
+
+.genderOptions label {
+  position: relative;
+  padding: 12px 8px;
+  outline: none;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  border: 1px solid #333;
+  cursor: pointer;
+  display: flex;
+  margin-right: 10px;
+}
+
+.genderOptions input[type="radio"] {
+  display: none;
+  cursor: pointer;
+}
+
+.genderOptions input[type="radio"]:checked + label {
+  background-color: var(--secondary-color);
+  color: white;
+  border: 1px solid var(--secondary-color);
+}
+
+.dateOfBirthButton {
+  position: relative;
+  display: inline-block;
+  width: 95%;
+}
+
+.fields_Dob {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fields_Dob input {
+  position: relative;
+  padding: 12px 12px 12px 50px;
+  outline: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  border: 1px solid #333;
+  width: 70%;
+}
+
+.formSection form .fields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.icon_btn {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  color: #363a3d;
+}
+
+.formSection form .fields input {
+  position: relative;
+  padding: 12px 12px 12px 50px;
+  outline: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  border: 1px solid #333;
+  width: 70%;
+}
+
+.css_123 {
+  display: flex;
+}
+
+.css_height {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.css_height .css_height_text {
+  padding: 12px 30px 12px 12px;
+  outline: none;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 1rem;
+  border: 1px solid #333;
+}
+
+.css_height p {
+  position: absolute;
+  right: 10px;
+  /* top: 12px; */
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #363a3d;
+}
+
+.formSection form .fieldimage {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .5rem;
+  margin-bottom: 20px;
+}
+
+.fieldimage .uploadButton {
+  margin: 0px;
+}
+
+.fieldimage .uploadButton button {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid #333;
+  margin: 0px;
+}
+
+.fieldimage .uploadButton button p {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #363a3d;
+  margin: 10px 7px;
+}
+
+.submitButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.submitButton button {
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  background: var(--secondary-color);
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.icon_btn {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  color: #363a3d;
+}
+
+.icon_btn_1 {
+  top: 15px !important;
+}
+.round{
+  border-radius: 50%;
+}
+@media only screen and (max-width: 770px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imageSection {
+    display: none;
+  }
+
+  .formSection {
+    margin: 0 170px;
+    border-radius: 6px;
+    padding: 0px 30px 30px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .formSection {
+    margin: 15px 20px;
+    border-radius: 6px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 20px 10px 15px 10px;
+    display: block;
+  }
+}

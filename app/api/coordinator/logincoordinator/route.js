@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import DeptCoordinator from '@/models/DeptCoordinator';
+import Student from '@/models/Student';
 import connectMongoDB from '@/config/connect';
 import { encryptValue, decryptValue } from '@/helpers/encrypt';
 import { cookies } from 'next/headers';
@@ -55,7 +56,7 @@ export async function POST(request) {
             // Student
 
             console.log("Finding Student/Student with rollorid");
-            const student = await Student.findOne({ roll: rollorid.lower() });
+            const student = await Student.findOne({ rollno: rollorid.toLowerCase() });
 
             const decryptedPassword = decryptValue(student.password);
             console.log(`Decrypted password is : ${decryptedPassword}`);
@@ -68,6 +69,7 @@ export async function POST(request) {
                     lastname: student.lastname,
                     department: student.department,
                     college: student.college,
+                    newlogin:student.newlogin,
                     role: "student"
                 }
 
@@ -86,7 +88,7 @@ export async function POST(request) {
 
                 return NextResponse.json({ success: true, status: "ok", loginAs: `${student.department} Department Student`,role:"student"});
             } else {
-
+                return NextResponse.json({ success: false, status: "failed", message:"Incorrect Password"});
             }
         }
         else {

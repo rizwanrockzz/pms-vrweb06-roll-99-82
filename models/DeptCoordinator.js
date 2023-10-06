@@ -14,6 +14,10 @@ const deptCoordinatorSchema = new Schema({
         type: String,
         default: ""
     },
+    email: {
+        type: String,
+        default: ""
+    },
     password: {
         type: String,
         default: ""

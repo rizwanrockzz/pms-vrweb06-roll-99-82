@@ -4,6 +4,7 @@ import Link from "next/link"
 import CoordinatorForm from "./components/CoordinatorForm"
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import StudentForm from "./components/StudentForm";
 
 const Homepge = () => {
   return (
@@ -30,7 +31,8 @@ const Homepge = () => {
       <br />
       <br />
       <br />
-      <CoordinatorForm />
+      {/* <CoordinatorForm /> */}
+      <StudentForm />
     </>
   )
 }
