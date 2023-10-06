@@ -17,7 +17,8 @@ export async function POST(request) {
         console.log("Finding Admin with email");
         const admin = await Admin.findOne({ email: email });
 
-        const decryptedPassword = decryptValue(admin.password);
+        if(admin){
+            const decryptedPassword = decryptValue(admin.password);
         console.log(`Decrypted password is : ${decryptedPassword}`);
 
         if (decryptedPassword === password) {
@@ -44,7 +45,10 @@ export async function POST(request) {
 
             return NextResponse.json({ success: true, status: "ok" });
         } else {
-            return NextResponse.json({ success: false, status: "failed", message: "Wrong Email or Password" });
+            return NextResponse.json({ success: false, status: "failed", message: "Wrong Password" });
+        }
+        }else{
+            return NextResponse.json({ success: false, status: "failed", message: "Email is not registered with us" });
         }
     } catch (error) {
         console.log(error);

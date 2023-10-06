@@ -1,0 +1,13 @@
+.main{
+    padding-top: 1rem;
+}
+.title{
+    font-size: var(--medium-size);
+    font-weight: 600;
+}
+.placements_flex{
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}

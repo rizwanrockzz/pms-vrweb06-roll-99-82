@@ -24,6 +24,7 @@ const CoordinatorForm = () => {
                     firstname: bodyData.firstname,
                     lastname: bodyData.lastname,
                     department: bodyData.department,
+                    email: bodyData.email,
                     password: bodyData.password,
                     role: "coordinator",
                     college: "vrsec"
@@ -94,6 +95,12 @@ const CoordinatorForm = () => {
                 <input
                     type="text"
                     name="lastname"
+                /><br />
+
+                <label>Email:</label><br />
+                <input
+                    type="email"
+                    name="email"
                 /><br />
 
                 <label>Password:</label><br />

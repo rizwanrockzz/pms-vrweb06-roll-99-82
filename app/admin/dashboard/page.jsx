@@ -1,34 +1,24 @@
-'use client'
-import { useState, useEffect } from "react"
-import { useRouter } from "next/navigation"
+import React from 'react'
+import styles from "./styles.module.css"
+import CardView from './dashboardComponents/CardView'
 
-const AdminDashboard = () => {
-  const router = useRouter();
-  const [adminDetails, setadminDetails] = useState();
-  useEffect(() => {
-    const getAdminDetails = async () => {
-      const calladmindata = await fetch('/api/admin/getadmin');
-      const admindatajson = await calladmindata.json();
-
-      console.log("admindata")
-      console.log(admindatajson)
-      setadminDetails(admindatajson.admindata);
-    }
-
-    getAdminDetails();
-  }, [])
-  return (
-    <>
-      <div>Welcome to Admin Dashboard</div>
-      {adminDetails && (
+function page() {
+    return (
         <>
-          <p>Name : {`${adminDetails.firstname} ${adminDetails.lastname}`}</p>
-          <p>Email : {adminDetails.email}</p>
-          <p>Role : {adminDetails.role}</p>
+            <div className={styles.main}>
+                <div className={styles.placements}>
+                    <p className={styles.title}>
+                        Placements Overview
+                    </p>
+                    <div className={styles.placements_flex}>
+                        <CardView color="#6BAC65" count="907" type="Placed Students"/>
+                        <CardView color="#EF793A" count="197" type="Not Placed Students"/>
+                        <CardView color="#AF84E7" count="107" type="Visited Companies"/>
+                    </div>
+                </div>
+            </div>
         </>
-      )}
-    </>
-  )
+    )
 }
 
-export default AdminDashboard
+export default page

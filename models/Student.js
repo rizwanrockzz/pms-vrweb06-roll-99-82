@@ -14,7 +14,7 @@ const crackedCompaniesDetailsSchema = new Schema({
         type: String,
         default: ""
     },
-    package: {
+    packageValue: {
         type: Number,
         default: 0
     },
@@ -22,10 +22,10 @@ const crackedCompaniesDetailsSchema = new Schema({
         type: Boolean,
         default: false
     },
-    offerRecievedDate: {
-        type: String,
-        default: ""
-    }
+    // offerRecievedDate: {
+    //     type: String,
+    //     default: ""
+    // }
 })
 
 const studentSchema = new Schema({
