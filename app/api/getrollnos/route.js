@@ -23,3 +23,7 @@ export async function GET(request) {
 
 }
 
+export async function POST(request) {
+    return NextResponse.json({ success: true, status: "ok", message: "Just to make getrollnos dynamic service side function" });
+}
+

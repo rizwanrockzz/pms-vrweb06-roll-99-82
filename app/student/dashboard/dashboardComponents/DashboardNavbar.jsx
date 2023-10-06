@@ -5,26 +5,13 @@ import Link from "next/link";
 import styles from "./dashboard.module.css";
 import { usePathname } from "next/navigation";
 import { Icon } from "@iconify/react";
-import { useEffect, useState } from "react"
-import { useRouter } from 'next/navigation';
+import { useState, useEffect } from "react"
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from 'next/navigation';
 
 const DashboardNavbar = ({ childrencontent }) => {
     const router = useRouter();
-    const [adminDetails, setadminDetails] = useState();
-    useEffect(() => {
-        const getAdminDetails = async () => {
-            const calladmindata = await fetch('/api/admin/getadmin');
-            const admindatajson = await calladmindata.json();
-
-            console.log("admindata")
-            console.log(admindatajson)
-            setadminDetails(admindatajson.admindata);
-        }
-
-        getAdminDetails();
-    }, [])
     const Pathname = usePathname();
     const [Open, setOpen] = useState(true)
     const toggle = () => setOpen(!Open);
@@ -63,7 +50,7 @@ const DashboardNavbar = ({ childrencontent }) => {
             });
 
             setTimeout(() => {
-                router.push("/admin/login");
+                router.push("/login");
             }, 1500);
         } else {
             toast.error(response.message, {
@@ -78,22 +65,35 @@ const DashboardNavbar = ({ childrencontent }) => {
             });
         }
     };
+
+    const [studentDetails, setstudentDetails] = useState();
+    useEffect(() => {
+        const getStudentDetails = async () => {
+            const callstudentdata = await fetch('/api/student/getstudent');
+            const studentdatajson = await callstudentdata.json();
+
+            console.log("studentdata")
+            console.log(studentdatajson)
+            setstudentDetails(studentdatajson.studentdata);
+        }
+
+        getStudentDetails();
+    }, [])
     return (
         <>
             <div className={styles.main_navbar} >
                 <div className={styles.center} >
                     <Icon icon="ci:hamburger-md" className={styles.cneter_icon} onClick={toggle} />
                     <div className={styles.userName}>
-                        Admin Dashboard
+                        Student Dashboard
                     </div>
                 </div>
                 <div className={styles.notification}>
                     <div className={styles.userInfo}>
-                        <Icon icon="bxs:user" height={20} />
+                        {/* <Icon icon="bxs:user" height={20} /> */}
+                        {studentDetails && <Image src={studentDetails.imageurl} alt='student-image' width={30} height={30} style={{ borderRadius: '50%' }} />}
                         <div className={styles.userName}>
-                            {adminDetails && (<>
-                                {`${adminDetails.firstname} ${adminDetails.lastname}`}
-                            </>)}
+                            {studentDetails && (`${studentDetails.firstname} ${studentDetails.lastname}`)}
                         </div>
                     </div>
                 </div>
@@ -103,8 +103,8 @@ const DashboardNavbar = ({ childrencontent }) => {
                 <div style={{ width: Open ? "15rem" : "5rem", padding: Open ? "15px" : "8px" }} className={styles.LeftsideBar}  >
                     <div className={styles.items}>
                         <Link
-                            href="/admin/dashboard"
-                            className={getLinkClassName("/admin/dashboard", styles.customClass)}
+                            href="/student/dashboard"
+                            className={getLinkClassName("/student/dashboard", styles.customClass)}
                             style={{ justifyContent: Open ? "flex-start" : "center", margin: Open ? "0px 0px" : "0 10px" }}
                         >
                             {/* <div className={styles.iconText}> */}
@@ -116,31 +116,30 @@ const DashboardNavbar = ({ childrencontent }) => {
                         </Link>
                         <p style={{ display: Open ? "none" : "block" }} className={styles.MobileText}>Home</p>
                         <Link
-                            href="/admin/dashboard/addUser"
+                            href="/student/dashboard/addFile"
                             className={getLinkClassName(
-                                "/admin/dashboard/addUser",
+                                "/student/dashboard/addFile",
                                 styles.customClass
                             )}
                             style={{ justifyContent: Open ? "flex-start" : "center", margin: Open ? "0px 0px" : "0 10px" }}
                         >
-                            <Icon icon="ci:user-add" height={20} />
-                            <p style={{ display: Open ? "block" : "none" }}>Add User</p>
+                            <Icon icon="material-symbols:upload-file-outline" height={20} />
+                            <p style={{ display: Open ? "block" : "none" }}>Upload Offer Letters</p>
                         </Link>
-                        <p style={{ display: Open ? "none" : "block" }} className={styles.MobileText}>Add User</p>
+                        <p style={{ display: Open ? "none" : "block" }} className={styles.MobileText}>Upload Offer Letters</p>
 
                         <Link
-                            href="/admin/dashboard/addPlaced"
+                            href="/student/dashboard/history"
                             className={getLinkClassName(
-                                "/admin/dashboard/addPlaced",
+                                "/student/dashboard/history",
                                 styles.customClass
                             )}
                             style={{ justifyContent: Open ? "flex-start" : "center", margin: Open ? "0px 0px" : "0 10px" }}
                         >
-                            <Icon icon="pepicons-pencil:file" height={20} />
-                            <p style={{ display: Open ? "block" : "none" }}>Record Placements</p>
+                            <Icon icon="ic:round-history" height={20} />
+                            <p style={{ display: Open ? "block" : "none" }}>Placements History</p>
                         </Link>
-                        <p style={{ display: Open ? "none" : "block" }} className={styles.MobileText}>Record Placements</p>
-
+                        <p style={{ display: Open ? "none" : "block" }} className={styles.MobileText}>Placements History</p>
 
                         <p style={{ display: Open ? "none" : "block" }} className={styles.MobileText}>Settings</p>
                         <button type='button' onClick={logoutUser}

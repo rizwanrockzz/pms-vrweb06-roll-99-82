@@ -47,7 +47,7 @@ export async function POST(request) {
                     value: encryptedCookieData,
                 });
 
-                return NextResponse.json({ success: true, status: "ok", loginAs: `${coordinator.department} Department Coordinator`,role:"coordinator" });
+                return NextResponse.json({ success: true, status: "ok", loginAs: `${coordinator.department} Department Coordinator`, role: "coordinator" });
             } else {
                 return NextResponse.json({ success: false, status: "failed", message: "Wrong Email or Password" });
             }
@@ -69,7 +69,9 @@ export async function POST(request) {
                     lastname: student.lastname,
                     department: student.department,
                     college: student.college,
-                    newlogin:student.newlogin,
+                    newlogin: student.newlogin,
+                    placed: student.placed,
+                    imageurl: student.profilepic,
                     role: "student"
                 }
 
@@ -86,9 +88,9 @@ export async function POST(request) {
                     value: encryptedCookieData,
                 });
 
-                return NextResponse.json({ success: true, status: "ok", loginAs: `${student.department} Department Student`,role:"student"});
+                return NextResponse.json({ success: true, status: "ok", loginAs: `${student.department} Department Student`, role: "student" });
             } else {
-                return NextResponse.json({ success: false, status: "failed", message:"Incorrect Password"});
+                return NextResponse.json({ success: false, status: "failed", message: "Incorrect Password" });
             }
         }
         else {
