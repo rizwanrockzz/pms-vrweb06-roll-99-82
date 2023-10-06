@@ -9,9 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@iconify/react": "^4.1.1",
+    "@sendgrid/mail": "^7.7.0",
+    "crypto-js": "^4.1.1",
+    "mongoose": "^7.5.4",
+    "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18",
-    "next": "13.5.4"
+    "react-toastify": "^9.1.3",
+    "sweetalert2": "^11.7.31"
   },
   "devDependencies": {
     "eslint": "^8",
