@@ -50,9 +50,18 @@ export async function POST(request) {
                 if (coordinatorEmail) {
                     // send mail
                     // (to, subject, htmlcode, textmessage)
-                    await SendEmail(studentData.email, "About Placement to student", "<strong>This is HTML code of placement to student</strong>", "This is text of placement to student")
 
-                    await SendEmail(coordinatorEmail, "About Placement to coordinator", "<strong>This is HTML code of placement to coordinator</strong>", "This is text of placement to coordinator")
+                    const emailStudentHTML = emailToStudentHTML(`${studentData.firstname} ${studentData.lastname}`, companyname, packageValue);
+
+                    const emailStudentText = emailToStudentText(`${studentData.firstname} ${studentData.lastname}`, companyname, packageValue)
+
+                    const emailCoordinatorHTML = emailToCoordinatorHTML(`${coordinatorData.firstname} ${coordinatorData.lastname}`, `${studentData.firstname} ${studentData.lastname} (${studentData.rollno})`, companyname, packageValue);
+
+                    const emailCoordinatorText = emailToCoordinatorText(`${coordinatorData.firstname} ${coordinatorData.lastname}`, `${studentData.firstname} ${studentData.lastname} (${studentData.rollno})`, companyname, packageValue, `${studentData.firstname} ${studentData.lastname}`)
+
+                    await SendEmail(studentData.email, "About Placement to Student", emailStudentHTML, emailStudentText)
+
+                    await SendEmail(coordinatorEmail, "About Placement to Coordinator", emailCoordinatorHTML, emailCoordinatorText)
                 }
 
                 return NextResponse.json({ success: true, status: "ok" });
