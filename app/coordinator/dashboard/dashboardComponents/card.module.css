@@ -1,0 +1,28 @@
+.card{
+    width: 28%;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--light-grey);
+    background-color: #F0F4F1;
+}
+.row_1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+}
+.dot{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+.title{
+    font-size: var(--small-size);
+    font-weight: 600;
+    color: var(--light-color);
+}
+.count{
+    font-size: var(--small-size);
+    font-weight: 600;
+    color: var(--light-black);
+}

@@ -87,7 +87,6 @@ export default function Home() {
 
           <div className={styles.text}>
             <Image src="/logo.png" width={100} height={100} alt='main-college-logo' />
-            <p className={styles.txt}>LogIn to Administrator</p>
             <form onSubmit={handleAdminLogin}>
               <div className={styles.main_form}>
                 <div className={styles.input_field}>
@@ -108,7 +107,6 @@ export default function Home() {
                 <div>
                   <button type='submit' className={styles.btn}>Login</button>
                 </div>
-                <p className={styles.txt_1}>If you are new to the portal,Contact Administrator</p>
               </div>
             </form>
           </div>

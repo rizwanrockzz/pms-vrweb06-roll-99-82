@@ -1,0 +1,29 @@
+
+  .wrapper {
+    /* position: relative;*/
+    min-height: 100vh;
+  }
+  
+  .child {
+    border: 10px solid #eff0f3;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+  }
+  
+  .confetti {
+    position: absolute;
+  }
+  
+  .red {
+    background-color: #ff6b00;
+  }
+  
+  .yellow {
+    background-color: #9054a1;
+  }
+  
+  .blue {
+    background-color: #00acca;
+  }
+  

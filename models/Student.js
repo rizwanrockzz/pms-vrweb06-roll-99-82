@@ -22,6 +22,10 @@ const crackedCompaniesDetailsSchema = new Schema({
         type: Boolean,
         default: false
     },
+    notifications: {
+        type: [String],
+        default: []
+    }
     // offerRecievedDate: {
     //     type: String,
     //     default: ""

@@ -5,7 +5,6 @@
     border-radius: 20px;
     background-color: var(--light-black);
     color: var(--light-white);
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 .main{
     display: flex;
@@ -43,6 +42,7 @@
 .txt{
     margin: 1rem 0;
     text-align: left;
+    font-size: 1.1rem;
     color: var(--light-grey);
 }
 .txt_1{

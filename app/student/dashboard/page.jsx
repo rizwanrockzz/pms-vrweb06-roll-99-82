@@ -4,12 +4,14 @@ import styles from "./student.module.css"
 import { useEffect, useState } from 'react'
 import CreateAccountForm from '@/app/components/CreateAccountForm'
 import CardView from './dashboardComponents/CardView'
+import Celebrations from '@/app/components/Celebrations'
 
 function StudentDashboard() {
     const packagelpa = "12";
     const company = "Microsoft"
 
     const [studentDetails, setstudentDetails] = useState();
+    const [showCelebration, setShowCelebration] = useState(false);
     const [placementDetails, setplacementDetails] = useState();
     useEffect(() => {
         const getStudentDetails = async () => {
@@ -19,6 +21,14 @@ function StudentDashboard() {
             console.log("studentdata")
             console.log(studentdatajson)
             setstudentDetails(studentdatajson.studentdata);
+            if (studentdatajson.studentdata.placed == true) {
+                setShowCelebration(true);
+
+                // Hide the celebration after 3 seconds
+                setTimeout(() => {
+                    setShowCelebration(false);
+                }, 5000);
+            }
         }
 
         const getPlacementStats = async () => {
@@ -45,7 +55,10 @@ function StudentDashboard() {
                     <>
                         {/* <div>Welcome to StudentDashboard</div> */}
                         <div className={styles.main}>
+                            {showCelebration && <Celebrations />}
+
                             <div className={styles.placements}>
+
                                 <p className={styles.title}>
                                     Placement Status {studentDetails && studentDetails.placed ? '🤩' : '☹️'}
                                 </p>

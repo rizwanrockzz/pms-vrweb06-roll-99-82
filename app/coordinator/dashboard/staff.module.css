@@ -1,52 +1,40 @@
-.main{
+.main {
     padding-top: 1rem;
 }
-.title{
+
+.title {
     font-size: var(--medium-size);
     font-weight: 600;
 }
-.placements_flex{
-    margin: 1rem 0 1.5rem;
+
+.placements_flex {
+    margin: 20px 0;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-.placements_f{
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 1rem;
-}
-.input_field {
-    width: 100%;
-    margin-bottom: 20px;
 }
 
-.input_name {
-    font-size: var(--small-size);
-    margin-bottom: 10px;
+.row_1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
 }
 
-.input_entry {
-    width: 100%;
-    padding: 15px;
-    color: var(--light-black);
-    border: 1px solid var(--light-grey);
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #57CBC6;
+}
+
+.card {
+    background-color: #fff;
+    padding: .7rem 1.5rem;
     border-radius: 10px;
-    outline: none;
+    border: .5px solid var(--light-grey);
 }
 
-.btn {
-    padding: 10px 15px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: var(--small-size);
-    color: var(--light-white);
-    background-color: var(--secondary-color);
-}
 
 .content_table {
     border-collapse: collapse;
@@ -80,4 +68,20 @@
 
 .content_table .tbody .tr:last-of-type {
     border-bottom: 2px solid var(--secondary-color);
+}
+
+.placements_flex_2 {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.card {
+    /* width: 28%; */
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    font-size: var(--small-size);
+    cursor: pointer;
+    border: 1px solid var(--light-grey);
+    background-color: #F0F4F1;
 }

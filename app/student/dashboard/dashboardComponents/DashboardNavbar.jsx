@@ -85,7 +85,7 @@ const DashboardNavbar = ({ childrencontent }) => {
                 <div className={styles.center} >
                     <Icon icon="ci:hamburger-md" className={styles.cneter_icon} onClick={toggle} />
                     <div className={styles.userName}>
-                        Student Dashboard
+                        <h1 className={styles.userName_}>Student Dashboard</h1>
                     </div>
                 </div>
                 <div className={styles.notification}>
