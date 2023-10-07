@@ -26,10 +26,6 @@ const crackedCompaniesDetailsSchema = new Schema({
         type: [String],
         default: []
     }
-    // offerRecievedDate: {
-    //     type: String,
-    //     default: ""
-    // }
 })
 
 const studentSchema = new Schema({

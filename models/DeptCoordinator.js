@@ -38,6 +38,10 @@ const deptCoordinatorSchema = new Schema({
         type: String,
         default: ""
     },
+    notifications: {
+        type: [String],
+        default: []
+    }
 }, {
     timestamps: true
 });

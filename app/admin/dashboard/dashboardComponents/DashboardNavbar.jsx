@@ -128,6 +128,20 @@ const DashboardNavbar = ({ childrencontent }) => {
                         </Link>
                         <p style={{ display: Open ? "none" : "block" }} className={styles.MobileText}>Add User</p>
 
+
+                        <Link
+                            href="/admin/dashboard/verifyreport"
+                            className={getLinkClassName(
+                                "/admin/dashboard/verifyreport",
+                                styles.customClass
+                            )}
+                            style={{ justifyContent: Open ? "flex-start" : "center", margin: Open ? "0px 0px" : "0 10px" }}
+                        >
+                            <Icon icon="pepicons-pencil:file" height={20} />
+                            <p style={{ display: Open ? "block" : "none" }}>Verify Report</p>
+                        </Link>
+                        <p style={{ display: Open ? "none" : "block" }} className={styles.MobileText}>Verify Report</p>
+
                         <Link
                             href="/admin/dashboard/addPlaced"
                             className={getLinkClassName(

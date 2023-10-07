@@ -79,7 +79,7 @@ function PlacementReports() {
 
         if (selectedPackage && selectedPackage !== "null") {
             const minPackage = parseInt(selectedPackage.split('LPA')[0]);
-            packageCondition = student.crackedCompanies.some(company => (company.package / 100000) >= minPackage);
+            packageCondition = student.crackedCompanies.some(company => (company.packageValue / 100000) >= minPackage);
         }
 
         return passoutCondition && packageCondition;
@@ -151,7 +151,7 @@ function PlacementReports() {
                     </tbody>
                 </table>
             </div> */}
-            {allStudents ? (<>
+            {filteredStudents ? (<>
                 <div className={styles.placements_flex}>
                     <table className={styles.content_table}>
                         <thead className={styles.thead}>
