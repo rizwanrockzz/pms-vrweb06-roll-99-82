@@ -6,8 +6,13 @@ import styles from "./dashboard.module.css";
 import { usePathname } from "next/navigation";
 import { Icon } from "@iconify/react";
 import { useState } from "react"
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from 'next/navigation';
 
 const DashboardNavbar = ({ childrencontent }) => {
+    const router = useRouter();
+
     const Pathname = usePathname();
     const [Open, setOpen] = useState(true)
     const toggle = () => setOpen(!Open);
@@ -16,8 +21,65 @@ const DashboardNavbar = ({ childrencontent }) => {
         const isActive = Pathname === href;
         return `${additionalClass} ${isActive ? styles.activeLink : ""}`;
     };
+
+    const logoutUser = async () => {
+        console.log("Logging out the user");
+
+        const res = await fetch("/api/logout", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                usedFor: "logout",
+            }),
+        });
+
+        console.log("response from /api/logout");
+        let response = await res.json();
+        console.log("response");
+        console.log(response);
+
+        if (response.success) {
+            toast.success(response.message, {
+                position: "top-center",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+
+            setTimeout(() => {
+                router.push("/login");
+            }, 2000);
+        } else {
+            toast.error(response.message, {
+                position: "top-center",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
+    };
     return (
         <>
+            <ToastContainer
+                position="top-center"
+                autoClose={4000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <div className={styles.main_navbar} >
                 <div className={styles.center} >
                     <Icon icon="ci:hamburger-md" className={styles.cneter_icon} onClick={toggle} />
@@ -78,12 +140,12 @@ const DashboardNavbar = ({ childrencontent }) => {
                         <p style={{ display: Open ? "none" : "block" }} className={styles.MobileText}>Notification</p>
 
                         <p style={{ display: Open ? "none" : "block" }} className={styles.MobileText}>Settings</p>
-                        <button type='button'
+                        <button type='button' onClick={logoutUser}
                             className={styles.logoutClass}
                             style={{ justifyContent: Open ? "flex-start" : "center" }}
                         >
                             <Icon icon="mingcute:exit-line" height={20} />
-                            <p style={{ display: Open ? "block" : "none" }}>Logout</p>
+                            <p onClick={logoutUser} style={{ display: Open ? "block" : "none" }}>Logout</p>
                         </button>
                         <p style={{ display: Open ? "none" : "block" }} className={styles.MobileText}>Logout</p>
                     </div>

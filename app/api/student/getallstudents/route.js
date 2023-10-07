@@ -19,8 +19,8 @@ export async function GET(request) {
         console.log(cookieData);
 
         await connectMongoDB();
-        
-        const allStudentData = await Student.find({department:cookieData.department})
+
+        const allStudentData = await Student.find({})
 
         console.log("allStudentData");
         console.log(allStudentData);

@@ -6,36 +6,40 @@ import styles from "./report.module.css"
 import { useState, useEffect } from 'react';
 
 function PlacementReports() {
-    const handlePassOut = () => {
-        const data = [
-            { name: 'John Doe', rollNumber: '123', passoutYear: '2024', company: 'ABC Corp', package: '10', placed: 'Yes' },
-            { name: 'Jane Smith', rollNumber: '456', passoutYear: '2024', company: 'XYZ Inc', package: '12', placed: 'Yes' },
-            { name: 'Alice Johnson', rollNumber: '789', passoutYear: '2024', company: 'DEF Ltd', package: '9', placed: 'No' },
-            { name: 'Bob Brown', rollNumber: '101', passoutYear: '2024', company: 'GHI Enterprises', package: '11', placed: 'Yes' },
-            { name: 'Eve Davis', rollNumber: '202', passoutYear: '2024', company: 'LMN Technologies', package: '8', placed: 'No' },
-        ];
+    const handlePassOut = (data) => {
+        // const data = [
+        //     { name: 'John Doe', rollNumber: '123', passoutYear: '2024', company: 'ABC Corp', package: '10', placed: 'Yes' },
+        //     { name: 'Jane Smith', rollNumber: '456', passoutYear: '2024', company: 'XYZ Inc', package: '12', placed: 'Yes' },
+        //     { name: 'Alice Johnson', rollNumber: '789', passoutYear: '2024', company: 'DEF Ltd', package: '9', placed: 'No' },
+        //     { name: 'Bob Brown', rollNumber: '101', passoutYear: '2024', company: 'GHI Enterprises', package: '11', placed: 'Yes' },
+        //     { name: 'Eve Davis', rollNumber: '202', passoutYear: '2024', company: 'LMN Technologies', package: '8', placed: 'No' },
+        // ];
 
         // Create a new jsPDF instance
         const doc = new jsPDF();
 
         // Set document properties
         doc.setProperties({
-            title: 'Students Report',
+            title: 'Students Placement Report',
         });
 
         // Define table columns
-        const columns = ['Name', 'Roll Number', 'Passout Year', 'Company', 'Package (LPA)', 'Placed'];
+        const columns = ["S.no", "Name", "Roll Numbers", "Company Names", "Packages(LPA)", "Batch Year"];
+        doc.text('Student Placement Report', 20, 10); // (text, x, y
 
         // Create an array of rows by mapping the data
-        const rows = data.map((student) => [
-            student.name,
-            student.rollNumber,
-            student.passoutYear,
-            student.company,
-            student.package,
-            student.placed,
+        const rows = data.map((student, index) => [
+            // {`${student.firstname} ${student.lastname}`},
+            index + 1,
+            student.firstname,
+            student.rollno,
+            student.crackedCompanies.length > 0 ? student.crackedCompanies.map(company => company.companyname).join(', ') : '-',
+            student.crackedCompanies.length > 0 ? student.crackedCompanies.map(company => company.packageValue / 100000 + ' LPA').join(', ') : '-',
+            new Date(student.passedOutYear).getFullYear()
         ]);
 
+
+        doc.setFontSize(18); // Set font size for the heading
         // Create a table
         doc.autoTable({
             head: [columns],
@@ -60,6 +64,27 @@ function PlacementReports() {
 
         getAllStudentsData();
     }, [])
+
+    const [selectedYear, setSelectedYear] = useState(null);
+    const [selectedPackage, setSelectedPackage] = useState(null);
+
+    // Filtered students based on selected criteria
+    const filteredStudents = allStudents?.filter(student => {
+        let passoutCondition = true;
+        let packageCondition = true;
+
+        if (selectedYear && selectedYear !== "null") {
+            passoutCondition = new Date(student.passedOutYear).getFullYear() === parseInt(selectedYear);
+        }
+
+        if (selectedPackage && selectedPackage !== "null") {
+            const minPackage = parseInt(selectedPackage.split('LPA')[0]);
+            packageCondition = student.crackedCompanies.some(company => (company.package / 100000) >= minPackage);
+        }
+
+        return passoutCondition && packageCondition;
+    });
+
     return (
         <div className={styles.main}>
             <div className={styles.placements}>
@@ -70,7 +95,7 @@ function PlacementReports() {
                     <div className={styles.placements_flex}>
                         <div className={styles.input_field}>
                             <p className={styles.input_name}>Passout</p>
-                            <select id="department" name="department" className={styles.input_entry}>
+                            <select id="department" name="department" className={styles.input_entry} onChange={(e) => setSelectedYear(e.target.value)}>
                                 <option value="null">Select Passout Year</option>
                                 <option value="2020">2020</option>
                                 <option value="2021">2021</option>
@@ -83,7 +108,7 @@ function PlacementReports() {
                         </div>
                         <div className={styles.input_field}>
                             <p className={styles.input_name}>Package</p>
-                            <select id="department" name="package" className={styles.input_entry}>
+                            <select id="department" name="package" className={styles.input_entry} onChange={(e) => setSelectedPackage(e.target.value)}>
                                 <option value="null">Select Package Range</option>
                                 <option value="20LPA">20LPA Above</option>
                                 <option value="16LPA">16LPA Above</option>
@@ -96,8 +121,8 @@ function PlacementReports() {
                         </div>
                     </div>
                     <div className={styles.placements_flex}>
-                        <button className={styles.btn}>Display</button>
-                        <button className={styles.btn}>Report</button>
+                        {/* <button className={styles.btn}>Display</button> */}
+                        <button onClick={(e) => { handlePassOut(filteredStudents) }} className={styles.btn}>Report</button>
                     </div>
                 </div>
             </div>
@@ -140,7 +165,8 @@ function PlacementReports() {
                             </tr>
                         </thead>
                         <tbody className={styles.tbody}>
-                            {allStudents && allStudents.map((student, index) => (
+                            {/* {allStudents && allStudents.map((student, index) => ( */}
+                            {filteredStudents && filteredStudents.map((student, index) => (
                                 <tr key={student.studentid} className={styles.tr}>
                                     <td className={styles.td}>{index + 1}</td>
                                     <td className={styles.td}>{student.firstname} {student.lastname}</td>
@@ -149,7 +175,7 @@ function PlacementReports() {
                                         {student.crackedCompanies.length > 0 ? student.crackedCompanies.map(company => company.companyname).join(', ') : '-'}
                                     </td>
                                     <td className={styles.td}>
-                                        {student.crackedCompanies.length > 0 ? student.crackedCompanies.map(company => company.package / 100000 + ' LPA').join(', ') : '-'}
+                                        {student.crackedCompanies.length > 0 ? student.crackedCompanies.map(company => company.packageValue / 100000 + ' LPA').join(', ') : '-'}
                                     </td>
                                     <td className={styles.td}>{new Date(student.passedOutYear).getFullYear()}</td>
                                 </tr>

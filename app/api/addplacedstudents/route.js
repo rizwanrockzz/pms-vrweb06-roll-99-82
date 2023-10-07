@@ -34,7 +34,7 @@ export async function POST(request) {
             } else {
                 const newPlacement = new CrackedCompaniesDetails({
                     companyname: companyname.toLowerCase(),
-                    package: packageValue
+                    packageValue: packageValue
                 });
 
                 // Push the newPlacement into the crackedCompanies array

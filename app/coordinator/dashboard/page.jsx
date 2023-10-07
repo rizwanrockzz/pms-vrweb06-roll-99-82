@@ -48,7 +48,7 @@ function CoordinatorDashboard() {
                         {student.crackedCompanies.length > 0 ? student.crackedCompanies.map(company => company.companyname).join(', ') : '-'}
                       </td>
                       <td className={styles.td}>
-                        {student.crackedCompanies.length > 0 ? student.crackedCompanies.map(company => company.package / 100000 + ' LPA').join(', ') : '-'}
+                        {student.crackedCompanies.length > 0 ? student.crackedCompanies.map(company => company.packageValue / 100000 + ' LPA').join(', ') : '-'}
                       </td>
                       <td className={styles.td}>{new Date(student.passedOutYear).getFullYear()}</td>
                     </tr>
