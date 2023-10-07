@@ -41,7 +41,7 @@ function PlacementHistory() {
                                             <>
                                                 <tr className={styles.tr}>
                                                     <td className={styles.td}>{placement.companyname}</td>
-                                                    <td className={styles.td}>{placement.package / 12}</td>
+                                                    <td className={styles.td}>{placement.packageValue / 12}</td>
                                                     <td className={styles.td}>{placement.offerAccepted ? "Yes" : "No"}</td>
                                                 </tr>
                                             </>
