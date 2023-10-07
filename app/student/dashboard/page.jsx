@@ -67,7 +67,7 @@ function StudentDashboard() {
                                         {placementDetails && placementDetails.map((detail, index) => (
                                             <>
                                                 <p key={index}>
-                                                    Congratulations 🎉 on your outstanding achievement! {detail.companyname} offered {detail.Value / 100000} LPA — the future looks bright with your success.
+                                                    Congratulations 🎉 on your outstanding achievement! {detail.companyname} offered {detail.packageValue / 100000} LPA — the future looks bright with your success.
                                                 </p>
                                                 <br />
                                             </>
