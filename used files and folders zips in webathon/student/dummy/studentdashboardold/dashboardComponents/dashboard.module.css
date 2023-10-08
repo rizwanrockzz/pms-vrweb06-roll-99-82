@@ -1,0 +1,400 @@
+.main {
+    display: flex;
+    justify-content: stretch;
+    padding-top: 55px;
+}
+
+.main_navbar {
+    width: 100%;
+    position: fixed;
+    background-color: #fff;
+    z-index: 99999;
+    display: flex;
+    padding: 1.5rem 1.3rem;
+    border-bottom: 1px solid #ccc;
+    justify-content: space-between;
+}
+
+.LeftsideBar {
+    position: fixed;
+    width: 250px;
+    padding: 20px;
+    height: 95vh;
+    transition: .2s ease-out;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.RightsideBar {
+    margin-left: 250px;
+    padding: 20px;
+    width: 100%;
+    transition: .2s ease-out;
+}
+
+.center {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.cneter_icon {
+    font-size: 20px;
+}
+
+.activeLink {
+    background: var(--secondary-color) !important;
+    color: var(--primaryColor) !important;
+    font-weight: 500 !important;
+}
+
+/* .activeLink:hover{
+    background: var(--dark-color) !important;
+  } */
+.customClass {
+    text-decoration: none;
+    display: flex;
+    color: black;
+    font-weight: 600;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.7rem 0.8rem;
+    border-radius: 10px;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.logoutClass:hover {
+    background: #f1f1f1;
+}
+
+.customClass:hover {
+    background: #f1f1f1;
+}
+
+.rela {
+    width: 85%;
+    bottom: 20px;
+    position: absolute;
+    margin-bottom: 20px;
+}
+
+.logoutClass {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    display: flex;
+    color: black;
+    font-weight: 600;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.7rem 0.8rem;
+    border-radius: 10px;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* .text_center{
+    text-align: center;
+  } */
+.iconText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Mobileicon {
+    font-size: 20px;
+}
+
+.MobileText {
+    margin-top: -6px;
+    text-align: center;
+    font-weight: 900;
+    font-size: .6rem;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+.main_home {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.items {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.search_div {
+    display: flex;
+    position: relative;
+}
+
+.search_div_p {
+    position: absolute;
+    color: #929292;
+    top: 16px;
+    left: 8px;
+}
+
+.search {
+    padding: 2px 2px 2px 35px;
+    border-radius: 30px;
+    outline: none;
+    border: 1px solid #ccc;
+    width: 490px;
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.userName {
+    margin-right: 0.5rem;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+/* Adjust the styles for the user image as needed */
+.userImage img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.notification {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.heading {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.sub_heading {
+    font-size: 0.9rem;
+}
+
+.heading_1 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.grid_card {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+    row-gap: 0.5rem;
+}
+
+.grid_card_main {
+    margin: 15px 0;
+    min-width: 17rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background: var(--main-color);
+}
+
+.grid_c {
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.img_main {
+    border-radius: 10px;
+}
+
+.grid_card_main_123 {
+    display: flex;
+    align-items: stretch;
+    gap: 1rem;
+    color: var(--white);
+}
+
+.grid_head_1 {
+    margin-top: 6px;
+    font-size: 0.7rem;
+    font-weight: 400;
+}
+
+.grid_card_main_124 {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grid_card_121 {
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+    font-size: 0.7rem;
+    color: var(--white);
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+}
+
+.table_body {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tr_h, .tr_mb {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 1fr 1fr 1fr;
+
+}
+
+.th {
+    background: #393939;
+    padding: 1rem 2rem 1rem .3rem;
+    text-align: left;
+    color: var(--white);
+}
+
+.th_l {
+    background: #393939;
+    padding: 1rem;
+    color: var(--white);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.th_r {
+    background: #393939;
+    padding: 1rem;
+    color: var(--white);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.td_l {
+    background: #D9D9D9;
+    padding: 10px;
+    color: black;
+    font-weight: 600;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.td_r {
+    background: #D9D9D9;
+    padding: 10px;
+    color: black;
+    font-weight: 600;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.td {
+    background: #D9D9D9;
+    padding: 10px;
+    color: black;
+    font-weight: 600;
+}
+
+.td_p {
+    background: #D9D9D9;
+    padding: 10px;
+    color: black;
+    font-weight: 600;
+}
+
+.userInfo_f {
+    display: flex;
+    gap: .7rem;
+    align-items: center;
+}
+
+.warn_card_main {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.icon_warn {
+    font-size: 5rem;
+}
+
+.text_warn {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.joinroom_btn {
+    background: #fff;
+    color: var(--dark-color);
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    padding: .2rem .6rem;
+}
+
+@media only screen and (max-width: 580px) {
+    .search_div {
+        display: none;
+    }
+
+    .RightsideBar {
+        padding: 5px;
+        width: 75%;
+    }
+
+    .table_overflow {
+        overflow-x: auto;
+    }
+
+    .heading {
+        font-size: .9rem;
+    }
+
+    .main_navbar {
+        padding: .3rem 1rem;
+        gap: 2rem;
+    }
+
+    .grid_card {
+        justify-content: center;
+    }
+
+    .userName {
+        font-size: .9rem;
+    }
+
+    /* .customClass {
+      margin: 0 10px;
+    } */
+}

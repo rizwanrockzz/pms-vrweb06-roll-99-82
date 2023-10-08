@@ -1,0 +1,45 @@
+.main{
+    padding-top: 1rem;
+}
+.title{
+    font-size: var(--medium-size);
+    font-weight: 600;
+}
+.placement_upload{
+    padding: 1rem;
+    /* width: 70%; */
+    margin: 20px 0;
+}
+
+.form {
+    width: 40%;
+}
+
+.input_field {
+    margin-bottom: 20px;
+}
+
+.input_name {
+    font-size: var(--small-size);
+    margin-bottom: 10px;
+}
+
+.input_entry {
+    width: 100%;
+    padding: 15px;
+    color: var(--light-black);
+    border: 1px solid var(--light-grey);
+    border-radius: 10px;
+    outline: none;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: var(--small-size);
+    color: var(--light-white);
+    background-color: var(--secondary-color);
+}

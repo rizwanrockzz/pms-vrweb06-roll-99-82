@@ -1,0 +1,23 @@
+
+Dear ${coordinatorName},
+
+We are excited for ${studentNameAndRoll} success and the opportunities that lie ahead in their new role. with a has successfully secured a position at ${companyName} with a ${packageValue} LPA offer.
+
+Please join us in congratulating ${studentName} on this achievement.
+
+
+Warm Regards,form Behalf of College.
+
+
+
+=============================================================================================
+
+
+Congratulations ${studentName}!
+
+We're excited to share that you've secured a position at ${companyName} with a ${packageValue} LPA offer. Your hard work, dedication, and skills have paid off, and we're thrilled for your success.
+
+Well done, and best wishes for your new adventure!
+
+
+Warm Regards,form Behalf of College.

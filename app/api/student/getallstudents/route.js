@@ -20,6 +20,7 @@ export async function GET(request) {
 
         await connectMongoDB();
 
+        // const allStudentData = await Student.find({department:cookieData.department})
         const allStudentData = await Student.find({})
 
         console.log("allStudentData");

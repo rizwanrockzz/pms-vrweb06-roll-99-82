@@ -1,0 +1,201 @@
+.Main_hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 150px 0px 140px;
+    padding: 15px 0px;
+  }
+  
+  .title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 3rem;
+  }
+  
+  .matter {
+    width: 75%;
+    font-size: 1.2rem;
+    line-height: 30px;
+    color: #000000;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .btn_1 {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--main-color);
+    color: #fff;
+  }
+  
+  .btn_1:hover {
+    cursor: pointer;
+    background-color: #3647ce;
+  }
+  
+  .dsection2 {
+    margin-left: 120px;
+  }
+  
+  .title1 {
+    font-size: 2rem;
+    color: #19191e;
+    margin-bottom: 20px;
+  }
+  
+  .matter1 {
+    font-size: 0.9rem;
+    color: #000;
+    margin-bottom: 45px;
+  }
+  
+  .matter2 {
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #19191e;
+  }
+  
+  .css_input {
+    margin-right: 30px;
+    padding: 15px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #9c9c9c;
+    outline-color: #3647ce;
+  }
+  
+  .btn_2 {
+    padding: 15px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--main-color);
+    color: #fff;
+  }
+  
+  .btn_2:hover {
+    cursor: pointer;
+    background-color: #3647ce;
+  }
+  
+  .apps {
+    display: flex;
+    gap: 20px;
+  }
+  .nav{
+    padding: 5px 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.ntitle{
+    width: 30%;
+    display: flex;
+    gap: .2rem;
+    align-items: center;
+}
+.sub{
+    font-size: 1rem;
+    font-weight: 600;
+}
+.buttons{
+    display: flex;
+    gap: 2rem;
+}
+.student_btn{
+    color: var(--light-black);
+    text-decoration: none;
+    padding: 12px 10px;
+    font-size: .8rem;
+    border: 2px solid var(--light-grey);
+    border-radius: 8px;
+}
+.student_btn:hover{
+    background-color: var(--light-black);
+    color: var(--light-white);
+    border: none;
+    cursor: pointer;
+}
+.Main_logo{
+  padding: .5rem 0;
+  display: flex;
+  border-top:1px solid var(--light-grey) ;
+  border-bottom: 1px solid var(--light-grey);
+}
+.com{
+  width: 33%;
+  padding: 1rem 3rem 1rem 6rem;
+  z-index: 9999;
+}
+.com_p{
+  font-size: 1rem;
+}
+/* Slider.css */
+
+.slider {
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider .ul {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  animation: cambio 10s infinite linear;
+}
+
+.slider .li {
+  padding: 0 10px;
+  list-style: none;
+}
+
+.slider .img {
+  max-width: fit-content !important;
+  
+}
+
+@keyframes cambio {
+  from {
+      margin-left: 0%;
+  }
+  to {
+      margin-left: -100%;
+  }
+}
+
+/* ========home============= */
+  /* Home Page  */
+  
+  @media only screen and (max-width: 770px) {
+    .Main_hero {
+      flex-direction: column;
+      margin: 0 50px;
+    }
+    .dsection2 {
+      margin: 50px 0 0 0;
+    }
+  }
+  
+  @media only screen and (max-width: 580px) {
+    .Main_hero {
+      margin: 0 20px;
+    }
+    .Main_hero img {
+      margin: 50px 0 0 0;
+    }
+    .matter {
+      width: 85%;
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .css_input {
+      margin: 0 0 20px 0;
+    }
+  }
+  

@@ -1,0 +1,16 @@
+:root {
+  --primaryColor: #fff;
+  --light-white: #f7f7f7;
+  --light-black: #1a1d23;
+  --light-color: #6b6b6b;
+  --small-size: 1.1rem;
+  --medium-size: 1.6rem;
+  --light-grey: #889fa4;
+  --secondary-color: #c433cc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
