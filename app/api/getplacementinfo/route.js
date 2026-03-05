@@ -22,8 +22,8 @@ export async function GET(request) {
 
         const placementData = await Student.findOne({ rollno: cookieData.rollno })
 
-        console.log("placementData");
-        console.log(placementData);
+        // console.log("placementData");
+        // console.log(placementData);
         return NextResponse.json({ success: true, status: "ok", placement: placementData.crackedCompanies });
     } else {
         return NextResponse.json({ success: false, status: "fail", studentdata: null });

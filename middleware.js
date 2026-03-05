@@ -11,15 +11,15 @@ export function middleware(request) {
         console.log(request.cookies);
         try {
             const cookie = request.cookies.get("pms-web");
-            console.log("cookie in browser");
-            console.log(cookie);
+            // console.log("cookie in browser");
+            // console.log(cookie);
 
             if (cookie) {
                 const cookiedata = JSON.parse(decryptValue(cookie.value));
-                console.log("Cookie data middle");
-                console.log(cookiedata);
-                console.log("cookiedata.role");
-                console.log(cookiedata.role);
+                // console.log("Cookie data middle");
+                // console.log(cookiedata);
+                // console.log("cookiedata.role");
+                // console.log(cookiedata.role);
                 if (cookiedata.role != "admin") {
                     // redirect('/login')
                     return NextResponse.redirect(new URL("/", request.nextUrl));
@@ -42,8 +42,8 @@ export function middleware(request) {
         console.log(request.cookies);
         try {
             const cookie = request.cookies.get("pms-web");
-            console.log("cookie in browser");
-            console.log(cookie);
+            // console.log("cookie in browser");
+            // console.log(cookie);
 
             if (cookie) {
                 const cookiedata = JSON.parse(decryptValue(cookie.value));
@@ -73,8 +73,8 @@ export function middleware(request) {
         console.log(request.cookies);
         try {
             const cookie = request.cookies.get("pms-web");
-            console.log("cookie in browser");
-            console.log(cookie);
+            // console.log("cookie in browser");
+            // console.log(cookie);
 
             if (cookie) {
                 const cookiedata = JSON.parse(decryptValue(cookie.value));
@@ -105,8 +105,8 @@ export function middleware(request) {
         console.log(request.cookies);
         try {
             const cookie = request.cookies.get("pms-web");
-            console.log("cookie in browser");
-            console.log(cookie);
+            // console.log("cookie in browser");
+            // console.log(cookie);
 
             if (cookie) {
                 const cookiedata = JSON.parse(decryptValue(cookie.value));

@@ -11,8 +11,8 @@ export function middleware(request) {
         console.log(request.cookies);
         try {
             const cookie = request.cookies.get("pms-web");
-            console.log("cookie in browser");
-            console.log(cookie);
+            // console.log("cookie in browser");
+            // console.log(cookie);
 
             if (cookie) {
                 const cookiedata = JSON.parse(decryptValue(cookie.value));

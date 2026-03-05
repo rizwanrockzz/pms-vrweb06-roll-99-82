@@ -109,6 +109,12 @@ function CoordinatorOrStudentLogin() {
                                         <button type='submit' className={styles.btn}>Login</button>
                                     </div>
                                     <p className={styles.txt_1}>If you are new to the portal,Contact Administrator</p>
+
+                                    <div>
+                                        <p>Demo Credentials</p>
+                                        <p>rollno : 208w1a1299</p>
+                                        <p>password : 1234</p>
+                                    </div>
                                 </div>
                             </form>
                         </div>

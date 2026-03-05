@@ -23,8 +23,8 @@ export async function GET(request) {
         // const allStudentData = await Student.find({department:cookieData.department})
         const allStudentData = await Student.find({})
 
-        console.log("allStudentData");
-        console.log(allStudentData);
+        // console.log("allStudentData");
+        // console.log(allStudentData);
 
         return NextResponse.json({ success: true, status: "ok", studentsdata: allStudentData });
     } else {

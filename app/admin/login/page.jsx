@@ -107,6 +107,12 @@ export default function Home() {
                 <div>
                   <button type='submit' className={styles.btn}>Login</button>
                 </div>
+
+                <div>
+                  <p>Demo Credentials</p>
+                  <p>email : admin@gmail.com</p>
+                  <p>password : 1234</p>
+                </div>
               </div>
             </form>
           </div>

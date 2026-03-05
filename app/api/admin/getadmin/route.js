@@ -15,8 +15,8 @@ export async function GET(request) {
 
         console.log(cookieData != null);
 
-        console.log("cookieData");
-        console.log(cookieData);
+        // console.log("cookieData");
+        // console.log(cookieData);
 
         return NextResponse.json({ status: "ok", admindata: cookieData });
     } else {
